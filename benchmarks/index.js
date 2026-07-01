@@ -13,9 +13,10 @@ const debug = require('debug')('benchmark');
  */
 
 const benchmarks = new Benchmark({
-	'prom-client@latest': 'prom-client@latest',
-	'prom-client@trunk': 'git@github.com:siimon/prom-client',
-	'prom-client@current': { location: process.cwd() },
+	// TODO: Update this once the module is published to as @prometheus/client.
+	'@prometheus/client@latest': 'prom-client@latest',
+	'@prometheus/client@trunk': 'git@github.com:prometheus/client_js',
+	'@prometheus/client@current': { location: process.cwd() },
 });
 
 benchmarks.suite('counter', require('./counter'));
